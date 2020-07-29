@@ -29,6 +29,10 @@ ctrl + alt + f
 Print
 	flameshot gui
 
+# Toggle Deadd notification center
+ctrl + alt + n
+    kill -s USR1 $(pidof deadd-notification-center)
+
 # Raise volume
 XF86AudioRaiseVolume
 	pamixer --increase 5
