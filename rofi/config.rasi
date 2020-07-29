@@ -1,0 +1,5 @@
+configuration {
+    font: "Hack 11";
+}
+
+@import "/usr/share/rofi/themes/Arc-Dark.rasi"

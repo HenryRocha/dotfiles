@@ -1,0 +1,125 @@
+#####################################################################################
+# Applications
+#####################################################################################
+# Terminal Emulator
+ctrl + alt + t
+	alacritty
+
+# VS Code
+ctrl + alt + c
+	code
+
+# Ranger
+ctrl + alt + r
+	alacritty -e ranger
+
+# Firefox
+ctrl + alt + {w, e}
+	firefox {_, --private-window}
+
+# Rofi
+super + space
+	rofi -show drun -show-icons -sidebar-mode
+
+# File manager
+ctrl + alt + f
+	spacefm
+
+# Print screen tool
+Print
+	flameshot gui
+
+# Raise volume
+XF86AudioRaiseVolume
+	pamixer --increase 5
+
+# Lower volume
+XF86AudioLowerVolume
+	pamixer --decrease 5
+
+# Mute audio
+XF86AudioMute
+	pamixer --toggle-mute
+
+# Mute microphone
+XF86AudioMicMute
+    pamixer --source 0 -t
+
+#####################################################################################
+# SXHKD
+#####################################################################################
+# Reload Sxhkd:
+super + shift + k
+	pkill -USR1 -x sxhkd
+
+#####################################################################################
+# BSPWM
+#####################################################################################
+# Quit/Restart Bspwm
+super + shift + {q,r}
+	bspc {quit, wm -r}
+
+#------------
+# Focused Window
+#------------
+# Close focused window
+{super, alt} + {c, F4}
+	bspc node -c
+
+# Kill focused window
+super + k
+	bspc node -k
+
+# Toggle focused window floating
+super + shift + f
+	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+
+# Swap focused window with the one in the given direction
+super + shift + {Left, Down, Up, Right}
+	bspc node -s {west,south,north,east}
+
+# Send focused window to given desktop
+super + shift + {0-9}
+	bspc node -d {0-9}
+
+# Move focused floating window
+super + {Left, Down, Up, Right}
+	bspc node -v {-20 0, 0 20, 0 -20, 20 0}
+
+# Expand a window by moving one of its side outward
+ctrl + super + {Left, Down, Up, Right}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Contract a window by moving one of its side inward
+ctrl + super + {KP_End, KP_Down, KP_Begin, KP_Next}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+#------------
+# Focus
+#------------
+# Focus window in the given direction
+super + {Left, Down, Up, Right}
+	bspc node -f {west,south,north,east}
+
+# Focus the next/previous window on the current desktop
+{super, alt} + Tab
+	bspc node -f {previous, next}.local
+
+#------------
+# Desktops
+#------------
+# Alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# Toggle fullscreen mode
+super + n
+    bspc node -t \~fullscreen
+
+# Focus the next/previous desktop in the current monitor
+ctrl + alt + {Left, Right}
+	bspc desktop -f {prev, next}.local
+
+# Go to given desktop
+super + {0-9}
+	bspc desktop -f {0-9}
