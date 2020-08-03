@@ -21,6 +21,9 @@ done
 # Sxhkd
 killall --ignore-case --exact sxhkd
 sxhkd &
+# Picom compositor
+killall --ignore-case --exact picom
+picom &
 # Deadd-notification-center
 killall --ignore-case deadd-notification-center
 deadd-notification-center &
