@@ -104,7 +104,6 @@ bindkey '^[[B' history-substring-search-down
 # Misc
 alias ls="ls --color=auto"
 alias ll="ls -la"
-alias cc="gcc -Og -Wall -std=c99 -o"
 alias dotfiles="cd $HOME/Repos/dotfiles"
 
 # Pacman
@@ -123,31 +122,21 @@ alias upzsh="source $HOME/.config/zsh/.zshrc"
 alias ranger="source ranger"
 
 # Bspwm
-alias ebpswm="nvim $HOME/.config/bspwm/bspwmrc"
+alias ebspwm="nvim $HOME/.config/bspwm/bspwmrc"
 alias upbspwm="bspc wm -r"
 
 # Sxhkd
 alias esxhkd="nvim $HOME/.config/sxhkd/sxhkdrc"
 alias upsxhkd="pkill -USR1 -x sxhkd"
 
-# xinit
-#alias setupxinit="cp /etc/X11/xinit/xinitrc $HOME/.xinitrc"
-#alias exinit="nvim $HOME/.xinitrc"
-#alias killx="pkill -15 Xorg"
-
 # Polybar
 #alias epoly="code $HOME/.config/polybar/config.conf"
 #alias killpoly="killall -q polybar"
 #alias upoly="killall -q polybar;sh $HOME/.config/polybar/launch.sh &"
 
-# Reflector
-#alias upmirrorlist="sudo reflector --country Brazil --save /etc/pacman.d/mirrorlist;cat /etc/pacman.d/mirrorlist"
-alias upmirrorlist="sudo pacman-mirrors -c Brazil"
-
 # Environment Variables
 export EDITOR="nvim"
 export TERMINAL="alacritty"
-# export VISUAL="code"
 
 # Run neofetch
 neofetch
