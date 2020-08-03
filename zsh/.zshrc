@@ -137,6 +137,7 @@ alias upsxhkd="pkill -USR1 -x sxhkd"
 # Environment Variables
 export EDITOR="nvim"
 export TERMINAL="alacritty"
+export $(dbus-launch)
 
 # Run neofetch
 neofetch
