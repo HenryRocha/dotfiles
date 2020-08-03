@@ -99,6 +99,19 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 #####################################################################################
+# VARIABLES
+#####################################################################################
+# Environment Variables
+export EDITOR="nvim"
+export TERMINAL="alacritty"
+export $(dbus-launch)
+
+# XSecureLock
+export XSECURELOCK_NO_COMPOSITE=1
+export XSECURELOCK_SHOW_DATETIME=1
+export XSECURELOCK_PASSWORD_PROMPT="time_hex"
+
+#####################################################################################
 # ALIASES
 #####################################################################################
 # Misc
@@ -128,11 +141,6 @@ alias upbspwm="bspc wm -r"
 # Sxhkd
 alias esxhkd="nvim $HOME/.config/sxhkd/sxhkdrc"
 alias upsxhkd="pkill -USR1 -x sxhkd"
-
-# Environment Variables
-export EDITOR="nvim"
-export TERMINAL="alacritty"
-export $(dbus-launch)
 
 # Run neofetch
 neofetch
