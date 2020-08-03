@@ -3,9 +3,9 @@
 # =================================================================================================
 # VARIABLES
 # =================================================================================================
-export MAIN_MONITOR="Virtual1"
+export MAIN_MONITOR="DP-4"
 export EXTERNAL_MONITOR1="HDMI-0"
-export EXTERNAL_MONITOR2="HDMI-1"
+export EXTERNAL_MONITOR2="HDMI-2"
 
 
 # =================================================================================================
@@ -18,6 +18,8 @@ do
     dex $file
 done
 
+# Fix mouse icon
+xsetroot -cursor_name left_ptr
 # Sxhkd
 killall --ignore-case --exact sxhkd
 sxhkd &
@@ -32,6 +34,11 @@ nitrogen --restore &
 # Polybar
 killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+# Xautolock
+xautolock -detectsleep -time 5 -locker "xsecurelock" -notify 60 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'" &
+# Bluetooth
+killall --ignore-case --exact blueman-applet
+dex /etc/xdg/autostart/blueman.desktop &
 
 
 # =================================================================================================
