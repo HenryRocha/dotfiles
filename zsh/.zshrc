@@ -129,11 +129,6 @@ alias upbspwm="bspc wm -r"
 alias esxhkd="nvim $HOME/.config/sxhkd/sxhkdrc"
 alias upsxhkd="pkill -USR1 -x sxhkd"
 
-# Polybar
-#alias epoly="code $HOME/.config/polybar/config.conf"
-#alias killpoly="killall -q polybar"
-#alias upoly="killall -q polybar;sh $HOME/.config/polybar/launch.sh &"
-
 # Environment Variables
 export EDITOR="nvim"
 export TERMINAL="alacritty"
