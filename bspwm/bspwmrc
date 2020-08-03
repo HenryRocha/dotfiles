@@ -1,33 +1,50 @@
-#!/usr/bin/xonsh
+#!/bin/sh
 
-# ==========================================================
-# Autostart
-# ==========================================================
+# =================================================================================================
+# VARIABLES
+# =================================================================================================
+export MAIN_MONITOR="Virtual1"
+export EXTERNAL_MONITOR1="HDMI-0"
+export EXTERNAL_MONITOR2="HDMI-1"
 
-# ==========================================================
+
+# =================================================================================================
+# AUTOSTART
+# =================================================================================================
+# Will run all .desktop in $HOME/.config/autostart using Dex.
+
+for file in $HOME/.config/autostart/*.desktop
+do
+    dex $file
+done
+
+
+# =================================================================================================
 # BSPWM
-# ==========================================================
-mainMonitor = "DP-4"
-externalMonitor1 = "HDMI-0"
+# =================================================================================================
+# If there is an external monitor connected, split the desktops between the two,
+# otherwise put all the desktops on the main monitor. If the main monitor can't
+# be found, let bspc try to do it on it's own.
 
-if !(xrandr -q | grep "HDMI-0 connected" >> /dev/null).returncode != 0:
-    ![bspc monitor @(mainMonitor) -d 1 2 3 4 5 6 7 8 9 0]
-else:
-    ![bspc monitor @(mainMonitor) -d 1 2 3 4 5]
-    ![bspc monitor @(externalMonitor1) -d 6 7 8 9 0]
+if xrandr -q | grep -w "$EXTERNAL_MONITOR1 connected"; then
+    bspc monitor $MAIN_MONITOR -d 1 2 3 4 5
+    bspc monitor $EXTERNAL_MONITOR1 -d 6 7 8 9 0
+elif xrandr -q | grep -w "$MAIN_MONITOR connected"; then
+    bspc monitor $MAIN_MONITOR -d 1 2 3 4 5 6 7 8 9 0
+else
+    bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+fi
 
-![bspc config border_width 2]
-![bspc config window_gap 8]
+bspc config border_width 2
+bspc config window_gap 8
 
-![bspc config focus_follows_pointer true]
-![bspc config split_ratio 0.52]
-![bspc config borderless_monocle true]
-![bspc config gapless_monocle true]
+bspc config focus_follows_pointer true
+bspc config split_ratio 0.52
+bspc config borderless_monocle true
+bspc config gapless_monocle true
 
-![bspc rule -r "*"]
-![bspc rule -a Alacritty desktop=^3 follow=on]
-![bspc rule -a Spacefm desktop=^4 follow=on]
-![bspc rule -a Pavucontrol state=floating floating=on]
-![bspc rule -a "code-oss" desktop=^2 follow=on]
-![bspc rule -a Nitrogen state=floating floating=on]
-![bspc rule -a "Microsoft Teams - Preview" desktop=^7 follow=on]
+bspc rule -r "*"
+bspc rule -a "code-oss" desktop=^2 follow=on
+bspc rule -a Alacritty desktop=^3 follow=on
+bspc rule -a Nitrogen state=floating floating=on
+bspc rule -a Pavucontrol state=floating floating=on
