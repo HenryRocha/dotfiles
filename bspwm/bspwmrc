@@ -39,6 +39,8 @@ xautolock -detectsleep -time 5 -locker "xsecurelock" -notify 60 -notifier "notif
 # Bluetooth
 killall --ignore-case --exact blueman-applet
 dex /etc/xdg/autostart/blueman.desktop &
+# Set keyboard layout
+setxkbmap -model pc104 -layout us -variant intl
 
 
 # =================================================================================================
