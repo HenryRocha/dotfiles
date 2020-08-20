@@ -33,6 +33,10 @@ Print
 ctrl + alt + n
     kill -s USR1 $(pidof deadd-notification-center)
 
+# Lock screen
+super + l
+    xautolock -locknow
+
 # Raise volume
 XF86AudioRaiseVolume
 	pamixer --increase 5
