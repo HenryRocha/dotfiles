@@ -111,6 +111,9 @@ export XSECURELOCK_NO_COMPOSITE=1
 export XSECURELOCK_SHOW_DATETIME=1
 export XSECURELOCK_PASSWORD_PROMPT="time_hex"
 
+# Setup Yarn Global
+export PATH="$(yarn global bin):$PATH"
+
 #####################################################################################
 # ALIASES
 #####################################################################################
