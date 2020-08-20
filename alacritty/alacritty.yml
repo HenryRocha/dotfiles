@@ -326,7 +326,7 @@ colors:
   #save_to_clipboard: false
 
 # Allow terminal applications to change Alacritty's window title.
-dynamic_title: true
+widnow.dynamic_title: true
 
 #cursor:
   # Cursor style
