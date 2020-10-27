@@ -127,7 +127,8 @@ export XSECURELOCK_PASSWORD_PROMPT="time_hex"
 #####################################################################################
 # Misc
 alias ls="ls --color=auto"
-alias ll="ls -la"
+alias ll="ls -l"
+alias lla="ls -al"
 alias dotfiles="cd $HOME/Repos/dotfiles"
 
 # Pacman
