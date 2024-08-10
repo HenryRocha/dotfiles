@@ -20,7 +20,7 @@ return {
 
     -- Enable features that only work if there is a language server active in the current file.
     local lsp_attach = function(client, bufnr)
-      lsp_zero = default_keymaps({ buffer = bufnr })
+      lsp_zero.default_keymaps({ buffer = bufnr })
 
       -- Example of setting up a new keybind.
       -- local opts = {buffer = bufnr}
