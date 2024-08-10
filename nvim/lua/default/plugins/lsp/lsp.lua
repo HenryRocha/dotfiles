@@ -5,12 +5,18 @@ return {
     "neovim/nvim-lspconfig",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/nvim-cmp",
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
   },
   config = function()
     local lsp_zero = require("lsp-zero")
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local lspconfig = require("lspconfig")
+    local mason = require("mason")
+    local mason_lspconfig = require("mason-lspconfig")
 
+    mason.setup()
+    mason_lspconfig.setup({})
     -- Enable features that only work if there is a language server active in the current file.
     local lsp_attach = function(client, bufnr)
       lsp_zero = default_keymaps({buffer = bufnr})
