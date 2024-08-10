@@ -20,6 +20,7 @@
     pkgs.lazydocker
     pkgs.yazi # terminal file explorer
     pkgs.zellij # terminal multiplexer
+    pkgs.fzf # fuzzy finder
 
     # Language specific tools.
     # nix
@@ -44,7 +45,7 @@
     # Misc
     pkgs.starship
     pkgs.carapace
-    pkgs.helix
+    pkgs-unstable.helix
     pkgs.direnv
     pkgs.oh-my-zsh
     pkgs.ripgrep
