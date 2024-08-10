@@ -30,4 +30,3 @@ return {
     vim.keymap.set("n", "H", function() bufferline.cycle(-1) end)
   end,
 }
-

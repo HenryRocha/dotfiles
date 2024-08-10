@@ -36,4 +36,3 @@ keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 keymap.set("v", "<A-Down>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 keymap.set("v", "<A-Up>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
-

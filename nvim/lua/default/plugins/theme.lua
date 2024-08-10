@@ -5,6 +5,5 @@ return {
     require("nightfox").setup({})
 
     vim.cmd("colorscheme duskfox")
-  end
+  end,
 }
-

@@ -18,11 +18,10 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    {import = "default.plugins"},
-    {import = "default.plugins.lsp"},
+    { import = "default.plugins" },
+    { import = "default.plugins.lsp" },
   },
   -- Automatically check for plugin updates.
-  checker = {enabled = true, notify = false},
-  change_detection = {enabled = true, notify = false},
+  checker = { enabled = true, notify = false },
+  change_detection = { enabled = true, notify = false },
 })
-
