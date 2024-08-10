@@ -22,9 +22,8 @@ return {
     local lsp_attach = function(client, bufnr)
       lsp_zero.default_keymaps({ buffer = bufnr })
 
-      -- Example of setting up a new keybind.
-      -- local opts = {buffer = bufnr}
-      -- vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+      local opts = { buffer = bufnr }
+      vim.keymap.set({ 'n', 'i' }, '<A-S-F>', '<cmd>lua vim.lsp.buf.format()<cr>', opts)
     end
 
     lsp_zero.extend_lspconfig({
@@ -32,12 +31,6 @@ return {
       lsp_attach = lsp_attach,
       capabilities = cmp_nvim_lsp.default_capabilities(),
     })
-
-    -- lsp_zero.format_on_save({
-    --   format_ops = {
-    --
-    --   }
-    -- })
 
     -- Configuration for specific LSP's goes here.
     lspconfig.ruff_lsp.setup({
