@@ -49,6 +49,11 @@ return {
       end,
     })
     lspconfig.pyright.setup({})
+    lspconfig.lua_ls.setup({
+      on_init = function(client)
+        lsp_zero.nvim_lua_settings(client, {})
+      end,
+    })
 
     -- Configuring autocompletion.
     local cmp = require("cmp")
