@@ -5,9 +5,11 @@ return {
     local mini_surround = require("mini.surround")
     local mini_pairs = require("mini.pairs")
     local mini_move = require("mini.move")
+    local mini_cursorword = require("mini.cursorword")
 
     mini_surround.setup()
     mini_pairs.setup()
+    mini_cursorword.setup()
 
     mini_move.setup({
       mappings = {
