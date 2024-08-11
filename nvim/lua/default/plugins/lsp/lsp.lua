@@ -25,7 +25,7 @@ return {
       lsp_zero.default_keymaps({ buffer = bufnr })
 
       local opts = { buffer = bufnr }
-      vim.keymap.set({ 'n', 'i' }, '<A-S-F>', '<cmd>lua vim.lsp.buf.format()<cr>', opts)
+      vim.keymap.set({ "n", "i" }, "<A-S-F>", "<cmd>lua vim.lsp.buf.format()<cr>", opts)
     end
 
     lsp_zero.extend_lspconfig({
