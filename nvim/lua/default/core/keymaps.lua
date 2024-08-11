@@ -26,17 +26,3 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew<CR>", { desc = "Open current buffer i
 
 -- Common keybinds
 keymap.set({ "n", "i" }, "<C-s>", "<cmd>write<CR>", { desc = "Writes file" })
-
--- Move Lines
-keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
-keymap.set("n", "<A-Down>", "<cmd>m .+1<cr>==", { desc = "Move Down" })
-keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
-keymap.set("n", "<A-Up>", "<cmd>m .-2<cr>==", { desc = "Move Up" })
-keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
-keymap.set("i", "<A-Down>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
-keymap.set("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
-keymap.set("i", "<A-Up>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
-keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
-keymap.set("v", "<A-Down>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
-keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
-keymap.set("v", "<A-Up>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
