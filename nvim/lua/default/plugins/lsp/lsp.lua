@@ -7,6 +7,7 @@ return {
     "hrsh7th/nvim-cmp",
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
+    { "L3MON4D3/LuaSnip", branch = "v2.3.0" },
   },
   config = function()
     local lsp_zero = require("lsp-zero")
@@ -14,6 +15,7 @@ return {
     local lspconfig = require("lspconfig")
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
+    local luasnip = require("luasnip")
 
     mason.setup()
     mason_lspconfig.setup({})
