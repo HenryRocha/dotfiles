@@ -25,6 +25,7 @@ return {
 
     vim.keymap.set("n", "<leader>ff", fzf.files, { noremap = true, silent = true, desc = "fzf files" })
     vim.keymap.set("n", "<leader>fc", fzf.commands, { noremap = true, silent = true, desc = "fzf commands" })
+    vim.keymap.set("n", "<F1>", fzf.commands, { noremap = true, silent = true, desc = "fzf commands" })
     vim.keymap.set("n", "<leader>fo", fzf.oldfiles, { noremap = true, silent = true, desc = "fzf oldfiles" })
     vim.keymap.set("n", "<leader>fr", fzf.grep_project, { noremap = true, silent = true, desc = "fzf in project lines" })
     vim.keymap.set("n", "<leader>fa", fzf.grep_curbuf, { noremap = true, silent = true, desc = "fzf in current buffer" })
